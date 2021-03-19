@@ -19,7 +19,7 @@ RUN cd $HOME \
     && curl -O https://download.jboss.org/wildfly/$WILDFLY_VERSION/wildfly-$WILDFLY_VERSION.tar.gz \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
-    && rm wildfly-$WILDFLY_VERSION.tar.gz \
+    && rm wildfly-$WILDFLY_VERSION.tar.gz 
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
