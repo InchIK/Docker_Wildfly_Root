@@ -20,16 +20,9 @@ RUN cd $HOME \
     && tar xf wildfly-$WILDFLY_VERSION.tar.gz \
     && mv $HOME/wildfly-$WILDFLY_VERSION $JBOSS_HOME \
     && rm wildfly-$WILDFLY_VERSION.tar.gz \
-    && chown -R jboss:0 ${JBOSS_HOME} \
-    && chmod -R g+rw ${JBOSS_HOME} \
-    && mkdir ${LOGS_HOME} \
-    && chown -R jboss:0 ${LOGS_HOME} \
-    && chmod -R g+rw ${LOGS_HOME}
 
 # Ensure signals are forwarded to the JVM process correctly for graceful shutdown
 ENV LAUNCH_JBOSS_IN_BACKGROUND true
-
-USER jboss
 
 # Expose the ports we're interested in
 EXPOSE 8080
